@@ -8,8 +8,6 @@ import { Ingredient } from 'src/app/model/ingredient.model';
 })
 export class ShoppinglistComponent implements OnInit {
 
-  @Input() newIng!: Ingredient;
-
   ingredients: Ingredient[] = [
     new Ingredient('Aplles', 5),
     new Ingredient('Tomatoes', 10)
@@ -23,6 +21,10 @@ export class ShoppinglistComponent implements OnInit {
     this.ingredients.push(ing)
     console.log(ing)
     console.log(this.ingredients)
+  }
+
+  addFakeIng() {
+    this.addNewIng(new Ingredient("cacca",7));
   }
 
 }
