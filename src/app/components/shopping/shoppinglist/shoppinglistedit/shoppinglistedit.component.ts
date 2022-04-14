@@ -10,9 +10,6 @@ import { StoreData } from 'src/app/services/store.service';
 export class ShoppinglisteditComponent implements OnInit {
 
   newIng!:Ingredient
-
-  //@Output() newIngAdded = new EventEmitter<Ingredient>();
-
   constructor(private dataStore: StoreData) { }
 
   ngOnInit(): void {

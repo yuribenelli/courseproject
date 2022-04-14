@@ -1,4 +1,4 @@
-export class Recipe {
+export class Recipe implements named {
   public name: string;
   public description: string;
   public imagePath: string;
@@ -8,4 +8,7 @@ export class Recipe {
     this.description = desc;
     this.imagePath = imagePath;
   }
+}
+export interface named{
+  name:string;
 }

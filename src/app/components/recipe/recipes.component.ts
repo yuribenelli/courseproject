@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 import { Recipe } from "src/app/model/recipe.model";
 
 @Component({
@@ -8,8 +8,5 @@ import { Recipe } from "src/app/model/recipe.model";
 })
 
 export class RecipesComponent{
-
-  selectedRecipe!: Recipe;
-
 
 }

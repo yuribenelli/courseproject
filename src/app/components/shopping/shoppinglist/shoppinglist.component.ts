@@ -10,12 +10,12 @@ import { StoreData } from 'src/app/services/store.service';
 export class ShoppinglistComponent implements OnInit {
 
 
-  ingredients: Ingredient[] = [
-    new Ingredient('Aplles', 5),
-    new Ingredient('Tomatoes', 10)
-  ];
 
-  constructor(private dataStore: StoreData) { }
+  ingredients!: Ingredient[];
+
+  constructor(private dataStore: StoreData) {
+    this.ingredients = dataStore.getAllIngs();
+  }
 
   ngOnInit(): void {
   }
