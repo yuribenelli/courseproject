@@ -7,10 +7,10 @@ import { Component, Input } from '@angular/core';
 })
 export class AppComponent {
 
-  @Input() openRecipes!:string;
+  @Input() navDirection:string = "Home";
 
   navigationClicked(data: string){
-    this.openRecipes = data
+    this.navDirection = data
   }
 
   /*ngDoCheck(){

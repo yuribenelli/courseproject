@@ -1,10 +1,10 @@
 <app-header (navClick)="navigationClicked($event)"></app-header >
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
-      <app-recipes *ngIf="(openRecipes=== 'Recipes')" ></app-recipes>
-      <app-shoppinglist *ngIf="(openRecipes === 'Shopping List')"></app-shoppinglist>
-      <app-wellcome *ngIf="(openRecipes !== 'Recipese' && openRecipes !== 'Shopping List')"></app-wellcome>
+    <div class="col-md-12"[ngSwitch]="navDirection">
+      <app-recipes *ngSwitchCase="'Recipes'"></app-recipes>
+      <app-shoppinglist *ngSwitchCase="'Shopping List'"></app-shoppinglist>
+      <app-wellcome *ngSwitchCase="'Home'"></app-wellcome>
     </div>
   </div>
 </div>

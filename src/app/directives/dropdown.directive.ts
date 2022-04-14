@@ -6,15 +6,11 @@ import { Directive, ElementRef, HostBinding, HostListener, OnInit, Renderer2} fr
 export class DropdownDirective {
 
   @HostBinding('class.open')isOpen:boolean = false;
-  @HostListener('click') toggleOpen(){
-    this.isOpen = !this.isOpen;
+  @HostListener('document:click',['$event']) toggleOpen(event: Event){
+    this.isOpen = this.elRef.nativeElement.contains(event.target)? !this.isOpen: false;
   }
-  constructor(private elRef: ElementRef, private renderer: Renderer2){}
-  class: string = "";
 
-  ngOnInit(){
-    this.renderer.addClass(this.elRef.nativeElement, this.class)
-  }
+  constructor(private elRef: ElementRef){}
 
 }
 
