@@ -13,4 +13,8 @@ export class AppComponent {
     this.openRecipes = data
   }
 
+  /*ngDoCheck(){
+    console.log(this.openRecipes)
+  }*/
 }
+
