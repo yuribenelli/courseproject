@@ -19,7 +19,6 @@ export class ShoppinglisteditComponent implements OnInit {
 
   onAddIng(name: string, amount: number){
     this.newIng = new Ingredient(name,amount)
-    console.log(this.newIng)
     this.newIngAdded.emit(this.newIng);
   }
 
