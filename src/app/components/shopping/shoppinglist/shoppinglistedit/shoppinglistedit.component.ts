@@ -7,18 +7,30 @@ import { StoreData } from 'src/app/services/store.service';
   templateUrl: './shoppinglistedit.component.html',
   styleUrls: ['./shoppinglistedit.component.scss']
 })
-export class ShoppinglisteditComponent implements OnInit {
+export class ShoppinglisteditComponent{
 
-  newIng!:Ingredient
+  warningText: string = "";
+  newIng!:Ingredient;
+  validName :boolean = false;
+  validAmount: boolean = false;
   constructor(private dataStore: StoreData) { }
 
-  ngOnInit(): void {
-  }
-
   addNewIng(nameEl: HTMLInputElement, amountEl: HTMLInputElement){
-    const name = nameEl.value
-    const amount = amountEl.valueAsNumber
-    this.dataStore.storeIng(name,amount)
-  }
 
+    this.validName = nameEl.value != "";
+    this.validAmount = amountEl.value != "";
+
+
+    if (this.validName && this.validAmount){
+      this.dataStore.storeIng(nameEl.value,amountEl.valueAsNumber);
+      this.warningText = "";
+
+    }else{
+      this.warningText = "Name or Amount fields are Empty"
+    }
+
+  }
+//---------------------------------------------
+//*********CLOSING CLASS DECLARATION***********
+//---------------------------------------------
 }

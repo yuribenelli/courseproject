@@ -30,4 +30,8 @@ export class StoreData {
   private searchEle(name: string, list: named[]): named | undefined{
     return list.find(i => i.name==name);
   }
+//---------------------------------------------
+//*********CLOSING CLASS DECLARATION***********
+//---------------------------------------------
+
 }
