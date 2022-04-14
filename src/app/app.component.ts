@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class AppComponent {
 
-  @Input() openRecipes:string = "home";
+  @Input() openRecipes!:string;
 
   navigationClicked(data: string){
     this.openRecipes = data

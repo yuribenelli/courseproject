@@ -1,6 +1,6 @@
-<div class="row" (newIngAdded)="addNewIng(newIng)">
+<div class="row">
   <div class="col-xs-10">
-    <app-shoppinglistedit></app-shoppinglistedit>
+    <app-shoppinglistedit (newIngAdded)="addNewIng($event)"></app-shoppinglistedit>
      <hr>
     <ul>
       <a
