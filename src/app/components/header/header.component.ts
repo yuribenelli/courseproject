@@ -8,12 +8,12 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  @Output() navClick = new EventEmitter<boolean>();
+  @Output() navClick = new EventEmitter<string>();
   constructor() { }
 
   ngOnInit(): void {
   }
-  onNavigationClick(openRecipes: boolean){
+  onNavigationClick(openRecipes: string){
     this.navClick.emit(openRecipes);
   }
 

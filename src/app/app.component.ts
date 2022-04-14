@@ -7,9 +7,9 @@ import { Component, Input } from '@angular/core';
 })
 export class AppComponent {
 
-  @Input() openRecipes:boolean = false;
+  @Input() openRecipes:string = "home";
 
-  navigationClicked(data: boolean){
+  navigationClicked(data: string){
     this.openRecipes = data
   }
 
