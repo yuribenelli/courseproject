@@ -17,6 +17,7 @@ import { RecipesComponent } from './components/recipe/recipes.component';
 import { ShoppinglistComponent } from './components/shopping/shoppinglist/shoppinglist.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { StoreData } from './services/store.service';
+import { RecipehomeComponent } from './components/recipe/recipehome/recipehome.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { StoreData } from './services/store.service';
     RecipesComponent,
     WellcomeComponent,
     DropdownDirective,
-    NotfoundComponent
+    NotfoundComponent,
+    RecipehomeComponent
   ],
   imports: [
     FormsModule,

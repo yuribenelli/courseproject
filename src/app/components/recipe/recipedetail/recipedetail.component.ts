@@ -11,20 +11,14 @@ import { StoreData } from 'src/app/services/store.service';
 })
 export class RecipedetailComponent implements OnInit {
 
-
-
   constructor(private dataStore: StoreData,
     private currRoute: ActivatedRoute) {}
 
     selectedRecipe?: Recipe;
     id! :number;
 
-  // get selectedRecipe(): Recipe | undefined{
-  //   return this.dataStore.selectedRecipe;
-  // }
-
   ngOnInit(): void {
-    if(this.currRoute.snapshot.params != undefined){
+    if(this.currRoute.snapshot.params !== undefined){
       this.id = this.currRoute.snapshot.params['id']
       this.selectedRecipe = this.dataStore.getRec(this.id);
       this.currRoute.params.subscribe(
@@ -33,16 +27,10 @@ export class RecipedetailComponent implements OnInit {
           this.selectedRecipe = this.dataStore.getRec(this.id);
       }
       );
-
     }
-
-
   }
 
   onAddIngToShopping(){
     // pass ing list to service and add to shopping
-
   }
-
-
 }

@@ -17,8 +17,8 @@ export class ShoppinglisteditComponent{
 
   addNewIng(nameEl: HTMLInputElement, amountEl: HTMLInputElement){
 
-    this.validName = nameEl.value != "";
-    this.validAmount = amountEl.value != "";
+    this.validName = nameEl.value !== "";
+    this.validAmount = amountEl.value !== "";
 
 
     if (this.validName && this.validAmount){
