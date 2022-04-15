@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Recipe } from 'src/app/model/recipe.model';
 import { StoreData } from 'src/app/services/store.service';
 
@@ -12,14 +13,34 @@ export class RecipedetailComponent implements OnInit {
 
 
 
-  constructor(private dataStore: StoreData) {}
+  constructor(private dataStore: StoreData,
+    private router: Router,
+    private currRoute: ActivatedRoute) {}
+    selectedRecipe?: Recipe;
+    id! :number;
 
-  get selectedRecipe(): Recipe | undefined{
-    return this.dataStore.selectedRecipe;
-  }
+  // get selectedRecipe(): Recipe | undefined{
+  //   return this.dataStore.selectedRecipe;
+  // }
 
   ngOnInit(): void {
+    if(this.currRoute.snapshot.params != undefined){
+      this.id = this.currRoute.snapshot.params['id']
+      this.currRoute.params.subscribe(
+      (params: Params)=>{
+        this.id = params['id'];
+      }
+      );
+      this.selectedRecipe = this.dataStore.getRec(this.id);
+    }
+
 
   }
+
+  onAddIngToShopping(){
+    // pass ing list to service and add to shopping
+
+  }
+
 
 }

@@ -9,11 +9,6 @@ import { StoreData } from './services/store.service';
 })
 export class AppComponent {
 
-  @Input() navDirection:string = "Home";
-
-  navigationClicked(data: string){
-    this.navDirection = data
-  }
 
 }
 

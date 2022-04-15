@@ -12,7 +12,14 @@ import { HeaderComponent } from './components/header/header.component';
 import { RecipesComponent } from './components/recipe/recipes.component';
 import { WellcomeComponent } from './components/wellcome/wellcome.component';
 import { DropdownDirective } from './directives/dropdown.directive';
+import { RouterModule, Routes } from '@angular/router';
 
+const appRoutes: Routes = [
+  { path: '', component: WellcomeComponent },
+  { path: 'recipes', component: RecipesComponent },
+  { path: 'shopping', component: ShoppinglistComponent },
+  { path: 'recipes/:id', component: RecipesComponent },
+];
 
 @NgModule({
   declarations: [
@@ -30,6 +37,7 @@ import { DropdownDirective } from './directives/dropdown.directive';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]

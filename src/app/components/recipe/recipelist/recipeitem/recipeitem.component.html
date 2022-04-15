@@ -1,9 +1,11 @@
 <a
-href="#"
+routerLink="/recipes"
 class="list-group-item clearfix"
-(click)="onSelected()"
+(click)="onSelected(recipe.id)"
 >
+
   <div class="pull-left">
+    <span class="pull.left">{{recipe.id}}</span>
     <h4 class="list-group-item-heading">{{recipe.name}}</h4>
     <p class="list-group-item-text">{{recipe.description}}</p>
   </div>
