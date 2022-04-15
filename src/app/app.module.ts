@@ -16,8 +16,9 @@ import { WellcomeComponent } from './components/wellcome/wellcome.component';
 import { RecipesComponent } from './components/recipe/recipes.component';
 import { ShoppinglistComponent } from './components/shopping/shoppinglist/shoppinglist.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
-import { StoreData } from './services/store.service';
+import { ShoppingService } from './services/shopping.service';
 import { RecipehomeComponent } from './components/recipe/recipehome/recipehome.component';
+import { RecipeService } from './services/recipe.service';
 
 
 @NgModule({
@@ -40,7 +41,7 @@ import { RecipehomeComponent } from './components/recipe/recipehome/recipehome.c
     AppRoutingModule,
     BrowserModule,
   ],
-  providers: [StoreData],
+  providers: [ShoppingService , RecipeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

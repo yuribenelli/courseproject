@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Recipe } from 'src/app/model/recipe.model';
-import { StoreData } from 'src/app/services/store.service';
+import { RecipeService } from 'src/app/services/recipe.service';
 
 
 @Component({
@@ -11,26 +11,19 @@ import { StoreData } from 'src/app/services/store.service';
 })
 export class RecipedetailComponent implements OnInit {
 
-  constructor(private dataStore: StoreData,
+  constructor(private serv: RecipeService,
     private currRoute: ActivatedRoute) {}
 
     selectedRecipe?: Recipe;
     id! :number;
 
   ngOnInit(): void {
-    if(this.currRoute.snapshot.params !== undefined){
-      this.id = this.currRoute.snapshot.params['id']
-      this.selectedRecipe = this.dataStore.getRec(this.id);
-      this.currRoute.params.subscribe(
-      (params: Params) => {
-          this.id = params['id']
-          this.selectedRecipe = this.dataStore.getRec(this.id);
-      }
-      );
-    }
-  }
 
-  onAddIngToShopping(){
-    // pass ing list to service and add to shopping
+  this.currRoute.params.subscribe(
+    (params: Params) => {
+        this.id = params['id']
+        this.selectedRecipe = this.serv.getRec(this.id);
+    }
+    );
   }
 }

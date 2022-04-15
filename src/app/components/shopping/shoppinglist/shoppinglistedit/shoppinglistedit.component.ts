@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Ingredient } from 'src/app/model/ingredient.model';
-import { StoreData } from 'src/app/services/store.service';
+import { ShoppingService } from 'src/app/services/shopping.service';
 
 @Component({
   selector: 'app-shoppinglistedit',
@@ -13,7 +13,7 @@ export class ShoppinglisteditComponent{
   newIng!:Ingredient;
   validName :boolean = false;
   validAmount: boolean = false;
-  constructor(private dataStore: StoreData) { }
+  constructor(private serv: ShoppingService) { }
 
   addNewIng(nameEl: HTMLInputElement, amountEl: HTMLInputElement){
 
@@ -22,7 +22,7 @@ export class ShoppinglisteditComponent{
 
 
     if (this.validName && this.validAmount){
-      this.dataStore.storeIng(nameEl.value,amountEl.valueAsNumber);
+      this.serv.storeIng(nameEl.value,amountEl.valueAsNumber);
       this.warningText = "";
 
     }else{

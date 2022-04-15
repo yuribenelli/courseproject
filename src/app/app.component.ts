@@ -1,11 +1,12 @@
 import { Component, Input } from '@angular/core';
-import { StoreData } from './services/store.service';
+import { RecipeService } from './services/recipe.service';
+import { ShoppingService } from './services/shopping.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  providers: [ StoreData ]
+  providers: [ RecipeService, ShoppingService ]
 })
 export class AppComponent {
 
