@@ -18,8 +18,8 @@ export class RecipeitemComponent {
   constructor(private dataStore: StoreData,
     private router: Router) {}
 
-  onSelected(id: number){
+  onSelected(){
     //this.dataStore.getRec(this.recipe.name);
-    this.router.navigate(['/recipes/'+ id]);
+    this.router.navigate(['/recipes/'+ this.recipe.id]);
   }
 }
