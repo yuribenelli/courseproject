@@ -30,7 +30,7 @@ export class StoreData {
     return this.recipes
   }
   getRec(id: number): Recipe | undefined{
-    this.selectedRecipe = this.recipes.find(r => r.id=id);
+    this.selectedRecipe = this.recipes.find(r => r.id==id);
     return this.selectedRecipe;
   }
 
