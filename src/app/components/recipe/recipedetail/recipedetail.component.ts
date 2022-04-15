@@ -31,7 +31,6 @@ export class RecipedetailComponent implements OnInit {
       (params: Params) => {
           this.id = params['id']
           this.selectedRecipe = this.dataStore.getRec(this.id);
-          console.log(this.id)
       }
       );
 

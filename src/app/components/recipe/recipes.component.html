@@ -3,7 +3,9 @@
     <app-recipelist></app-recipelist>
   </div>
   <div class="col-md-7">
-    <app-recipedetail ></app-recipedetail>
+    <app-recipedetail
+    *ngIf="isToDisplay"
+    ></app-recipedetail>
   </div>
 </div>
 
