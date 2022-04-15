@@ -13,12 +13,15 @@ import { RecipesComponent } from './components/recipe/recipes.component';
 import { WellcomeComponent } from './components/wellcome/wellcome.component';
 import { DropdownDirective } from './directives/dropdown.directive';
 import { RouterModule, Routes } from '@angular/router';
+import { NotfoundComponent } from './components/notfound/notfound.component';
 
 const appRoutes: Routes = [
   { path: '', component: WellcomeComponent },
   { path: 'recipes', component: RecipesComponent },
   { path: 'shopping', component: ShoppinglistComponent },
   { path: 'recipes/:id', component: RecipesComponent },
+  { path: 'notfound', component: NotfoundComponent },
+  { path: '**', redirectTo: 'notfound' },
 ];
 
 @NgModule({
@@ -32,7 +35,8 @@ const appRoutes: Routes = [
     HeaderComponent,
     RecipesComponent,
     WellcomeComponent,
-    DropdownDirective
+    DropdownDirective,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,
