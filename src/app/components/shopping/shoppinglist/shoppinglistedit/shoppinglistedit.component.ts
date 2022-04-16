@@ -13,7 +13,7 @@ export class ShoppinglisteditComponent{
   newIng!:Ingredient;
   validName :boolean = false;
   validAmount: boolean = false;
-  constructor(private serv: ShoppingService) { }
+  constructor(private shoppingServ: ShoppingService) { }
 
   addNewIng(nameEl: HTMLInputElement, amountEl: HTMLInputElement){
 
@@ -22,7 +22,7 @@ export class ShoppinglisteditComponent{
 
 
     if (this.validName && this.validAmount){
-      this.serv.storeIng(nameEl.value,amountEl.valueAsNumber);
+      this.shoppingServ.storeIng(nameEl.value,amountEl.valueAsNumber);
       this.warningText = "";
 
     }else{
