@@ -9,13 +9,13 @@ export class RecipeService{
     new Recipe(1,
       'Burger',
       'A tasty  burger',
-      'https://www.buttalapasta.it/wp-content/uploads/2016/01/hamburger-di-carne-americano.jpg',
+      'https://www.bora.com/fileadmin/website_content/Erleben/Cooking/55_Team_Edition/Rezeptbilder/55_TeamEdition_Canada_Halloumi-Burger.jpg',
       [new Ingredient('Meat',1),
       new Ingredient('Cheese',20)]),
     new Recipe(2,
       'Pizza',
       'A wonderful Pizza',
-       'https://blog.giallozafferano.it/dulcisinforno/wp-content/uploads/2021/03/Hamburger-ricetta-6613_Ok.jpg'
+       'https://www.giallozafferano.it/images/238-23809/Pizza-Margherita_450x300.jpg'
        ,[new Ingredient('Dough',1),
        new Ingredient('Cheese',20),
        new Ingredient('Tomato Sauce',20)]),

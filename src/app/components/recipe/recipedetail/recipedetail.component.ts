@@ -34,7 +34,6 @@ export class RecipedetailComponent implements OnInit {
     for (let i = 0; i < this.selectedRecipe!.ingredients.length; i++) {
       const element = this.selectedRecipe?.ingredients[i];
       this.shoService.storeIng(element!.name,element!.amount)
-      console.log(this.shoService.getAllIngs())
       this.router.navigate(['/shopping'])
     }
   }
