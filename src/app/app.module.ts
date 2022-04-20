@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http'
 
 import { ShoppinglisteditComponent } from './components/shopping/shoppinglist/shoppinglistedit/shoppinglistedit.component';
 import { RecipelistComponent } from './components/recipe/recipelist/recipelist.component';
@@ -19,6 +19,7 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
 import { ShoppingService } from './services/shopping.service';
 import { RecipehomeComponent } from './components/recipe/recipehome/recipehome.component';
 import { RecipeService } from './services/recipe.service';
+import { DataStorageService } from './services/datastorage.service';
 
 
 @NgModule({
@@ -40,8 +41,9 @@ import { RecipeService } from './services/recipe.service';
     FormsModule,
     AppRoutingModule,
     BrowserModule,
+    HttpClientModule,
   ],
-  providers: [ShoppingService , RecipeService],
+  providers: [ShoppingService , RecipeService, DataStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
