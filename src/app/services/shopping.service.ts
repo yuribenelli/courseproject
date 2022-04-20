@@ -6,8 +6,8 @@ export class ShoppingService {
   ingredients: Ingredient[] = [];
   selectedIng?: Ingredient;
 
-  storeIng(name:string, amount:number){
-    this.ingredients.push({name,amount})
+  storeIng(id: number, name:string, amount:number){
+    this.ingredients.push({id,name,amount})
   }
   getAllIngs(): Ingredient[] {
     return this.ingredients

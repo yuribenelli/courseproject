@@ -19,7 +19,7 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
 import { ShoppingService } from './services/shopping.service';
 import { RecipehomeComponent } from './components/recipe/recipehome/recipehome.component';
 import { RecipeService } from './services/recipe.service';
-import { DataStorageService } from './services/datastorage.service';
+import { DataManageService } from './services/datamanage.service';
 
 
 @NgModule({
@@ -43,7 +43,7 @@ import { DataStorageService } from './services/datastorage.service';
     BrowserModule,
     HttpClientModule,
   ],
-  providers: [ShoppingService , RecipeService, DataStorageService],
+  providers: [ShoppingService , RecipeService, DataManageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -33,7 +33,7 @@ export class RecipedetailComponent implements OnInit {
   addIngToShopping(){
     for (let i = 0; i < this.selectedRecipe!.ingredients.length; i++) {
       const element = this.selectedRecipe?.ingredients[i];
-      this.shoService.storeIng(element!.name,element!.amount)
+      this.shoService.storeIng(i,element!.name,element!.amount)
       this.router.navigate(['/shopping'])
     }
   }

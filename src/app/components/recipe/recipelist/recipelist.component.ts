@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import { Component, OnInit, ɵɵqueryRefresh } from '@angular/core';
 import { Recipe } from 'src/app/model/recipe.model';
+import { DataManageService } from 'src/app/services/datamanage.service';
 import { RecipeService } from 'src/app/services/recipe.service';
 
 
@@ -8,15 +10,14 @@ import { RecipeService } from 'src/app/services/recipe.service';
   templateUrl: './recipelist.component.html',
   styleUrls: ['./recipelist.component.scss']
 })
-export class RecipelistComponent implements OnInit {
-  recipes: Recipe[];
+export class RecipelistComponent {
+  recipes!: Recipe[];
 
 
-  constructor(serv : RecipeService) {
-    this.recipes = serv.getAllRec()
-   }
+  constructor(private serv : RecipeService ,private dataManage: DataManageService ) {
+    dataManage.getRecipes()
+  }
 
-  ngOnInit(): void {}
-
+  
 
 }

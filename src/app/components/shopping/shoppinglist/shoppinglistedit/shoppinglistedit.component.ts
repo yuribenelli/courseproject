@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 import { Ingredient } from 'src/app/model/ingredient.model';
 import { ShoppingService } from 'src/app/services/shopping.service';
 
@@ -9,26 +10,16 @@ import { ShoppingService } from 'src/app/services/shopping.service';
 })
 export class ShoppinglisteditComponent{
 
-  warningText: string = "";
-  newIng!:Ingredient;
-  validName :boolean = false;
-  validAmount: boolean = false;
-  constructor(private shoppingServ: ShoppingService) { }
+  id!: number;
+  constructor(private shoppingServ: ShoppingService, private currRoute: ActivatedRoute) { }
 
   addNewIng(nameEl: HTMLInputElement, amountEl: HTMLInputElement){
-
-    this.validName = nameEl.value !== "";
-    this.validAmount = amountEl.value !== "";
-
-
-    if (this.validName && this.validAmount){
-      this.shoppingServ.storeIng(nameEl.value,amountEl.valueAsNumber);
-      this.warningText = "";
-
-    }else{
-      this.warningText = "Name or Amount fields are Empty"
-    }
-
+    this.currRoute.params.subscribe(
+      (params: Params) => {
+        this.id = params['id']
+      }
+    );
+    this.shoppingServ.storeIng( this.id, nameEl.value,amountEl.valueAsNumber);
   }
 //---------------------------------------------
 //*********CLOSING CLASS DECLARATION***********

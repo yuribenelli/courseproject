@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { DataManageService } from 'src/app/services/datamanage.service';
 
 
 @Component({
@@ -9,10 +10,13 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
 
-  constructor() { }
+  constructor(private dataManage: DataManageService) { }
 
   ngOnInit(): void {
   }
 
+  onFetchData(){
+    this.dataManage.getRecipes();
+  }
 
 }
