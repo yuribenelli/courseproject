@@ -1,5 +1,6 @@
 import { Ingredient } from "../model/ingredient.model";
 import { named } from "../model/recipe.model";
+
 export class ShoppingService {
 
   ingredients: Ingredient[] = [];
